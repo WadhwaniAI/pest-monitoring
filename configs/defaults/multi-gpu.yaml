@@ -1,0 +1,35 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=default.yaml
+
+seed: 12345
+name: default
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss-save-top-5.yaml
+  - /datamodule: object-detection/base-size-512-wo-norm-000.yaml
+  - /trainer: single-gpu.yaml
+  - /model/network: ssd/cfvgg-size512-reducedfc.yaml
+  - /model/optimizer: AdamW/wd-1e-3.yaml
+
+trainer:
+  max_epochs: 10
+  gpus: 2
+  strategy: ddp_find_unused_parameters_false
+
+model:
+  _target_: src.models.CFSSDNet
+  network:
+    feature_extractor:
+      backbone_name: vgg19
+      pretrained_backbone: True
+
+datamodule:
+  dataset:
+    data_file: /data/ground-truth/jsons/3.0.0.json
+  sampler_config: Null
+  batch_size: 32
+  num_workers: 20

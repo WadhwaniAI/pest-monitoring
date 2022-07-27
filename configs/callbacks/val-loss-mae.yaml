@@ -1,0 +1,13 @@
+ssd_metrics:
+  _target_: src.callbacks.ssd.SSDMaeCallback
+  val: True
+  box_label_mapping:
+    1: PBW
+    2: ABW
+
+model_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "val/loss"
+  mode: min
+  dirpath: "checkpoints/"
+  filename: "{epoch:02d}"

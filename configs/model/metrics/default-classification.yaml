@@ -1,0 +1,8 @@
+metric_list:
+- _target_: torchmetrics.Accuracy
+- _target_: torchmetrics.Precision
+  ignore_index: 0
+- _target_: torchmetrics.Recall
+  ignore_index: 0
+- _target_: torchmetrics.MatthewsCorrcoef
+  num_classes: 2

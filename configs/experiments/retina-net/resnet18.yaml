@@ -1,0 +1,13 @@
+# @package _global_
+
+seed: 12345
+name: default-retina-net-resnet18
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss-save-top-5.yaml
+  - /datamodule: object-detection/base-retina-net.yaml
+  - /trainer: single-gpu.yaml
+  - /model: defaults/retina-net.yaml
+  - override /datamodule/dataset: object-detection/v4.0.1.yaml

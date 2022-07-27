@@ -1,0 +1,30 @@
+train:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 512
+    width: 512
+  - _target_: src.data.transforms.RandomSampleCrop
+  - _target_: src.data.transforms.Expand
+    mean: [104, 117, 123]
+  - _target_: src.data.transforms.PhotometricDistort
+  - _target_: src.data.transforms.HorizontalFlip
+  - _target_: src.data.transforms.VerticalFlip
+  - _target_: src.data.transforms.Normalize
+  - _target_: src.data.transforms.ToTensor
+val:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 512
+    width: 512
+  - _target_: src.data.transforms.Normalize
+  - _target_: src.data.transforms.ToTensor
+test:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 512
+    width: 512
+  - _target_: src.data.transforms.Normalize
+  - _target_: src.data.transforms.ToTensor

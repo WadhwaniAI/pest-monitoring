@@ -1,0 +1,6 @@
+train:
+  _target_: src.data.CFSampler
+  shuffle: True
+val:
+  _target_: src.data.CFSampler
+  shuffle: False

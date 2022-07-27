@@ -1,0 +1,9 @@
+defaults:
+  - dataset: classification/v1.0.0.yaml
+
+_target_: src.data.base_datamodule.BaseDataModule
+num_workers: 10
+batch_size: 32
+shuffle: True
+drop_last: False
+pin_memory: True

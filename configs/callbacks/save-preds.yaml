@@ -1,0 +1,5 @@
+save_preds:
+  _target_: src.callbacks.ObjectDetectionWriter
+  ckpt_path: ${ckpt}
+  split: ${split}
+  data_file: ${datamodule.dataset.data_file}

@@ -1,0 +1,24 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=default.yaml
+
+seed: 12345
+name: default
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss.yaml
+  - /datamodule: object-detection/base-size-512-w-norm-003.yaml
+  - /trainer: single-gpu.yaml
+  - /model/network: ssd/resnet50-size512.yaml
+  - /model/optimizer: adam.yaml
+  - /model/lr_scheduler: stepLR.yaml
+  - /wandb_sweep: default.yaml
+
+trainer:
+  max_epochs: 100
+
+model:
+  _target_: src.models.ObjectDetectNet

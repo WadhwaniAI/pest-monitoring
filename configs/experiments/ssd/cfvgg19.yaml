@@ -1,0 +1,15 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=default.yaml
+
+seed: 12345
+name: cfssd-vgg19-base
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss.yaml
+  - /datamodule: object-detection/base-size-512-w-norm-000.yaml
+  - /trainer: single-gpu.yaml
+  - /model: defaults/cfvgg19.yaml

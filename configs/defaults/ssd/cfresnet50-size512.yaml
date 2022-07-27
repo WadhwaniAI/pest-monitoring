@@ -1,0 +1,23 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=default.yaml
+
+seed: 12345
+name: default
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss.yaml
+  - /datamodule: object-detection/base-size-512-w-norm-000.yaml
+  - /trainer: single-gpu.yaml
+  - /model/network: ssd/cfssd-resnet50-size512.yaml
+  - /model/optimizer: adam.yaml
+  - /wandb_sweep: default.yaml
+
+trainer:
+  max_epochs: 200
+
+model:
+  _target_: src.models.CFNet

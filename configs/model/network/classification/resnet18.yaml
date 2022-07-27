@@ -1,0 +1,5 @@
+_target_: src.networks.classification.ClassificationImageNet
+backbone:
+  _target_: torchvision.models.resnet18
+  pretrained: True
+num_classes: 2

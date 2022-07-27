@@ -1,0 +1,92 @@
+{
+    "images": [
+        {
+            "id": 0,
+            "file_path": "1.jpg",
+            "s3_url": null,
+            "width": 3120,
+            "height": 4160,
+            "date_captured": "2018:11:06 04:53:22"
+        },
+        {
+            "id": 1,
+            "file_path": "2.jpg",
+            "s3_url": null,
+            "width": 3120,
+            "height": 4160,
+            "date_captured": "2018:10:20 10:46:34"
+        }
+    ],
+    "box_annotations": [
+        {
+            "id": 0,
+            "image_id": 0,
+            "category_id": 1,
+            "bbox": [
+                1911,
+                1082,
+                143,
+                201
+            ]
+        },
+        {
+            "id": 1,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                1088,
+                2217,
+                190,
+                149
+            ]
+        }
+    ],
+    "caption_annotations": [
+        {
+            "id": 0,
+            "image_id": 0,
+            "category_id": 2,
+            "caption": "1"
+        },
+        {
+            "id": 1,
+            "image_id": 1,
+            "category_id": 2,
+            "caption": "0"
+        }
+    ],
+    "categories": [
+        {
+            "id": 0,
+            "name": "abw",
+            "supercategory": "bounding box"
+        },
+        {
+            "id": 1,
+            "name": "pbw",
+            "supercategory": "bounding box"
+        },
+        {
+            "id": 2,
+            "name": "is_trap",
+            "supercategory": "Image Level Categorical Label"
+        }
+    ],
+    "splits": [
+        {
+            "image_id": 0,
+            "split": "train"
+        },
+        {
+            "image_id": 1,
+            "split": "train"
+        }
+    ],
+    "info": {
+        "version": "0.0.0",
+        "description": "test json 1",
+        "contributor": "anmol",
+        "url": "/home/users/anmol/projects/pest-monitoring-new/utils/json/tests/resources/test_json_1.json",
+        "date_created": "2021-10-18"
+    }
+}

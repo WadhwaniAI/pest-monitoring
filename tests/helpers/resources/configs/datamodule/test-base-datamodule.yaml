@@ -1,0 +1,37 @@
+_target_: src.data.base_datamodule.BaseDataModule
+num_workers: 10
+batch_size: 32
+shuffle:
+  train: True
+  val: False
+  test: False
+drop_last: True
+pin_memory: True
+dataset:
+  _target_: src.data.base_dataset.BaseDataset
+  data_file: tests/helpers/resources/jsons/test-general-file.json
+  transforms:
+    train:
+      - _target_: src.data.transforms.XYWHToXYX2Y2
+      - _target_: src.data.transforms.ConvertFromInts
+      - _target_: src.data.transforms.ToPercentCoords
+      - _target_: src.data.transforms.Resize
+        height: 300
+        width: 300
+      - _target_: src.data.transforms.ToTensor
+    val:
+      - _target_: src.data.transforms.XYWHToXYX2Y2
+      - _target_: src.data.transforms.ConvertFromInts
+      - _target_: src.data.transforms.ToPercentCoords
+      - _target_: src.data.transforms.Resize
+        height: 300
+        width: 300
+      - _target_: src.data.transforms.ToTensor
+    test:
+      - _target_: src.data.transforms.XYWHToXYX2Y2
+      - _target_: src.data.transforms.ConvertFromInts
+      - _target_: src.data.transforms.ToPercentCoords
+      - _target_: src.data.transforms.Resize
+        height: 300
+        width: 300
+      - _target_: src.data.transforms.ToTensor

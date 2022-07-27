@@ -1,0 +1,6 @@
+wandb:
+  _target_: pytorch_lightning.loggers.wandb.WandbLogger
+  project: "pest-monitoring-new"
+  notes: "Binary Classification (Traps / Non-Traps)"
+  save_dir: "."
+  name: ${name}-${now:%H-%M-%S}

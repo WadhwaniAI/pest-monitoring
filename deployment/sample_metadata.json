@@ -1,0 +1,7 @@
+{
+    "input_size": 300,
+    "trap_label": {"0": "pheromone", "1": "non-trap"},
+    "threshold": [0.2, 0.2],
+    "research_version": "configs/experiments/default.yaml",
+    "version": "2.5"
+}

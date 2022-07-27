@@ -1,0 +1,12 @@
+metrics:
+  _target_: src.callbacks.BaseObjectDetectionMetricPlot
+  box_label_mapping:
+    0: PBW
+    1: ABW
+
+save_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "val/AP"
+  mode: max
+  dirpath: "checkpoints/"
+  filename: "{epoch:02d}"

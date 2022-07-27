@@ -1,0 +1,26 @@
+# @package _global_
+
+seed: 12345
+name: default
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss-save-top-5.yaml
+  - /datamodule: default.yaml
+  - /datamodule/dataset: object-detection/base-size-512-w-norm-000.yaml
+  - /datamodule/dataset/transforms: object-detection/retina-net.yaml
+  - /trainer: single-gpu.yaml
+  - /model/network: retina-net/cfresnet18.yaml
+  - /model/optimizer: adam.yaml
+  - /model/lr_scheduler: stepLR.yaml
+  - /wandb_sweep: default.yaml
+
+trainer:
+  max_epochs: 50 # overriding default
+
+datamodule:
+  batch_size: 16
+
+model:
+  _target_: src.models.CFNet

@@ -1,0 +1,11 @@
+# @package _global_
+
+_target_: src.models.retina_net.Model
+network:
+  _target_: src.networks.retina_net.network.resnet34
+  num_classes: 6
+  pretrained: False
+optimizer:
+  _target_: torch.optim.Adam
+  lr: 0.0001
+  weight_decay: 0.0005

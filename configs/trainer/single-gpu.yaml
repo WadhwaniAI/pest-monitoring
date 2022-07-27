@@ -1,0 +1,5 @@
+_target_: pytorch_lightning.Trainer
+gpus: 1
+max_epochs: 500
+gradient_clip_val: 0.5
+accumulate_grad_batches: 2

@@ -1,0 +1,15 @@
+# @package _global_
+
+# Config was used for deployment cycle
+
+seed: 12345
+name: cfssd-vgg19
+
+defaults:
+  - /hydra: default.yaml
+  - /callbacks: val-loss-save-top-5.yaml
+  - /datamodule: object-detection/base-size-512-wo-norm-000.yaml
+  - /trainer: single-gpu.yaml
+  - /model: defaults/cfssd-vgg19.yaml
+  - /pruner: cfnet/ssd/vgg19/apg-l1-0.8.yaml
+  - override /datamodule/dataset: object-detection/v4.0.0.yaml

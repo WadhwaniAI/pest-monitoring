@@ -1,0 +1,9 @@
+defaults:
+  - dataset: object-detection/v1.0.1.yaml
+  - override dataset/transforms: object-detection/base-w-norm.yaml
+
+_target_: src.data.base_datamodule.BaseDataModule
+num_workers: 10
+batch_size: 64
+drop_last: False
+pin_memory: True

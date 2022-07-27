@@ -1,0 +1,7 @@
+_target_: pytorch_lightning.Trainer
+gpus: 1
+auto_lr_find: True
+stochastic_weight_avg: True
+max_epochs: 50
+gradient_clip_val: 0.5
+accumulate_grad_batches: 2

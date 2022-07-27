@@ -1,0 +1,17 @@
+_target_: src.networks.ssd.CFSSD
+feature_extractor:
+  _target_: src.networks.ssd._vgg_extractor
+  backbone_name: vgg16
+  highres: False
+  pretrained_backbone: True
+anchor_generator:
+  _target_: src.networks.ssd.DefaultBoxGenerator
+  aspect_ratios: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+  steps: [8, 16, 32, 64, 100, 300]
+  scales: [0.07, 0.15, 0.33, 0.51, 0.69, 0.87, 1.05]
+rejection_head:
+  _target_: src.networks.ssd.CFSSDVGGRejectionHead
+loss:
+  _target_: src.networks.ssd.CFSSDDefaultLoss
+img_size: [512, 512]
+num_classes: 3

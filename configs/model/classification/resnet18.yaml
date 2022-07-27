@@ -1,0 +1,8 @@
+defaults:
+  - network: classification/resnet18.yaml
+  - loss: base-classification.yaml
+  - optimizer: adam.yaml
+  - lr_scheduler: stepLR.yaml
+  - metrics: default-classification.yaml
+
+_target_: src.models.ClassificationModel

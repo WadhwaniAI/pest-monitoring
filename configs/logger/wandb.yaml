@@ -1,0 +1,6 @@
+wandb:
+  _target_: pytorch_lightning.loggers.wandb.WandbLogger
+  project: "pest-monitoring-new"
+  notes: "Wandb Description: Experiments from Pest-Monitoring-New"
+  name: ${name}
+  save_dir: "."

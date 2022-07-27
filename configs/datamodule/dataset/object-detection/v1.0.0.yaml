@@ -1,0 +1,5 @@
+defaults:
+  - transforms: object-detection/base-wo-norm.yaml
+
+_target_: src.data.pest_default_dataset.PestDefaultDataset
+data_file: /data/ground-truth/jsons/v1.0.0.json

@@ -1,0 +1,17 @@
+project: pest-monitoring-new
+name: Wandb sweep over inference Hyperparameters
+method: bayes
+metric:
+  name: MAE-Alpha/PBW
+  goal: minimize
+parameters:
+  nms_threshold:
+    distribution: q_uniform
+    min: 0.02
+    max: 0.98
+    q: 0.02
+  conf_threshold:
+    distribution: q_uniform
+    min: 0.02
+    max: 0.98
+    q: 0.02

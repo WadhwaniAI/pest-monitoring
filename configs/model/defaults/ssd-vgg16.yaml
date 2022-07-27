@@ -1,0 +1,6 @@
+defaults:
+  - optimizer: AdamW/wd-1e-3.yaml
+  - lr_scheduler: stepLR.yaml
+  - network: ssd/vgg-size512-reducedfc.yaml
+
+_target_: src.models.ObjectDetectNet

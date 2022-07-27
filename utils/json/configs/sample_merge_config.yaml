@@ -1,0 +1,56 @@
+schema:
+  info: {}
+  images:
+    id_key: id
+    unique_keys:
+      - file_path
+    merge_strategy: unique_extend
+  categories:
+    id_key: id
+    unique_keys:
+      - name
+      - supercategory
+    merge_strategy: unique_extend
+    prefix:
+      supercategory:
+        first: null
+        second: predicted_
+  box_annotations:
+    id_key: id
+    unique_keys:
+      - image_id
+      - category_id
+      - bbox
+      - bbox_score
+    references:
+      image_id:
+        - images
+        - id
+      category_id:
+        - categories
+        - id
+    merge_strategy: unique_extend
+  caption_annotations:
+    id_key: id
+    unique_keys:
+      - image_id
+      - category_id
+      - caption
+      - conf
+    references:
+      image_id:
+        - images
+        - id
+      category_id:
+        - categories
+        - id
+    merge_strategy: unique_extend
+  splits:
+    unique_keys:
+      - image_id
+      - split
+    references:
+      image_id:
+        - images
+        - id
+    merge_strategy: unique_extend

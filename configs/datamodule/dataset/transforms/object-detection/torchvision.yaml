@@ -1,0 +1,30 @@
+train:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 1024
+    width: 1024
+  - _target_: src.data.transforms.Normalize
+    mean: [0., 0., 0.]
+    std: [1., 1., 1.]
+  - _target_: src.data.transforms.ToTensor
+val:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 1024
+    width: 1024
+  - _target_: src.data.transforms.Normalize
+    mean: [0., 0., 0.]
+    std: [1., 1., 1.]
+  - _target_: src.data.transforms.ToTensor
+test:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 1024
+    width: 1024
+  - _target_: src.data.transforms.Normalize
+    mean: [0., 0., 0.]
+    std: [1., 1., 1.]
+  - _target_: src.data.transforms.ToTensor

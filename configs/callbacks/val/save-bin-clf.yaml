@@ -1,0 +1,4 @@
+bin-val-save-preds:
+  _target_: src.callbacks.validation.BinaryValSavePreds
+  save_dir: 'saved_predictions/'
+  run_dict:

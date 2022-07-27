@@ -1,0 +1,6 @@
+defaults:
+  - transforms: classification/base.yaml
+
+_target_: src.data.pest_datasets.PestMultiHeadDataset
+heads: [is_trap] # (single head)
+data_file: /data/ground-truth/jsons/v1.0.0.json

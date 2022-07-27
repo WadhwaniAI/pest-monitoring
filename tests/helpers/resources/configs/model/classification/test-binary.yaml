@@ -1,0 +1,25 @@
+# @package _global_
+
+model:
+  _target_: src.models.classification.ClassificationModel
+  network:
+    _target_: src.networks.classification.ClassificationImageNet
+    backbone:
+      _target_: torchvision.models.quantization.resnet18
+      pretrained: True
+      quantize: False
+    num_classes: 2
+  optimizer:
+    _target_: torch.optim.Adam
+    lr: 0.0001
+    weight_decay: 0.0005
+  loss:
+    _target_: torch.nn.CrossEntropyLoss
+  lr_scheduler:
+    _target_: torch.optim.lr_scheduler.CyclicLR
+    base_lr: 0.0001
+    max_lr: 0.001
+    cycle_momentum: False
+  metrics:
+    metric_list:
+    - _target_: torchmetrics.Accuracy

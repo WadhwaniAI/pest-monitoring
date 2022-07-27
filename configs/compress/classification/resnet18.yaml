@@ -1,0 +1,17 @@
+# @package _global_
+
+seed: 12345
+name: default
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss-save-top-5.yaml
+  - /datamodule: classification/base.yaml
+  - /trainer: single-gpu.yaml
+  - /model: classification/resnet18.yaml
+
+pruner:
+  _target_: compression.L1FilterPruner
+  max_epochs: 1
+  dummy_input_shape: [1, 3, 512, 512]

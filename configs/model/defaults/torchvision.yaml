@@ -1,0 +1,6 @@
+defaults:
+  - optimizer: AdamW/wd-1e-3.yaml
+  - lr_scheduler: stepLR.yaml
+  - network: torchvision/faster_rcnn/resnet50_fpn.yaml
+
+_target_: src.models.ObjectDetectNetTVFormat

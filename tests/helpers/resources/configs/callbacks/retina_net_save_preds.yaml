@@ -1,0 +1,2 @@
+_target_: src.callbacks.retina_net.RetinaNetSavePredictions
+save_dir: 'test-callback/'

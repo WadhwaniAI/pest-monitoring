@@ -1,0 +1,119 @@
+{
+    "images": [
+        {
+            "date_captured": "2018:11:06 04:53:22",
+            "file_path": "1.jpg",
+            "height": 4160,
+            "id": 0,
+            "s3_url": null,
+            "width": 3120
+        },
+        {
+            "date_captured": "2018:10:20 10:46:34",
+            "file_path": "2.jpg",
+            "height": 4160,
+            "id": 1,
+            "s3_url": null,
+            "width": 3120
+        },
+        {
+            "date_captured": "2018:10:09 16:34:13",
+            "file_path": "81.jpg",
+            "height": 3120,
+            "id": 2,
+            "s3_url": null,
+            "width": 4160
+        }
+    ],
+    "categories": [
+        {
+            "id": 0,
+            "name": "abw",
+            "supercategory": "bounding box"
+        },
+        {
+            "id": 1,
+            "name": "pbw",
+            "supercategory": "bounding box"
+        },
+        {
+            "id": 2,
+            "name": "is_trap",
+            "supercategory": "Image Level Categorical Label"
+        },
+        {
+            "id": 3,
+            "name": "abw",
+            "supercategory": "predicted bounding box"
+        },
+        {
+            "id": 4,
+            "name": "is_trap",
+            "supercategory": "predicted Image Level Categorical Label"
+        }
+    ],
+    "box_annotations": [
+        {
+            "bbox": [
+                1911,
+                1082,
+                143,
+                201
+            ],
+            "category_id": 1,
+            "id": 0,
+            "image_id": 0
+        },
+        {
+            "bbox": [
+                1088,
+                2217,
+                190,
+                149
+            ],
+            "category_id": 0,
+            "id": 1,
+            "image_id": 0
+        }
+    ],
+    "caption_annotations": [
+        {
+            "caption": 1,
+            "category_id": 4,
+            "conf": 0.99,
+            "id": 0,
+            "image_id": 2
+        },
+        {
+            "caption": 1,
+            "category_id": 4,
+            "id": 1,
+            "image_id": 1
+        }
+    ],
+    "splits": [
+        {
+            "image_id": 0,
+            "split": "train"
+        },
+        {
+            "image_id": 1,
+            "split": "train"
+        },
+        {
+            "image_id": 2,
+            "split": "val"
+        },
+        {
+            "image_id": 1,
+            "split": "val"
+        }
+    ],
+    "info": {
+        "version": "{\"first_file\": \"0.0.0\", \"second_file\": \"0.0.0\"}",
+        "description": "Merged tests/resources/test_json_1.json and tests/resources/test_json_2.json",
+        "contributor": "anmol",
+        "url": "tests/resources/test_json_merged.json",
+        "date_created": "2021-10-18"
+    }
+}

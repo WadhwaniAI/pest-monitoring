@@ -1,0 +1,33 @@
+train:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 1024
+    width: 1024
+  - _target_: src.data.transforms.RandomBlur
+  - _target_: src.data.transforms.HorizontalFlip
+  - _target_: src.data.transforms.VerticalFlip
+  - _target_: src.data.transforms.StandardizeImage0to1
+  - _target_: src.data.transforms.Normalize
+    max_pixel_value: 1.0
+  - _target_: src.data.transforms.ToTensor
+val:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 1024
+    width: 1024
+  - _target_: src.data.transforms.StandardizeImage0to1
+  - _target_: src.data.transforms.Normalize
+    max_pixel_value: 1.0
+  - _target_: src.data.transforms.ToTensor
+test:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 1024
+    width: 1024
+  - _target_: src.data.transforms.StandardizeImage0to1
+  - _target_: src.data.transforms.Normalize
+    max_pixel_value: 1.0
+  - _target_: src.data.transforms.ToTensor

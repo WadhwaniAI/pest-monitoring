@@ -1,0 +1,13 @@
+_target_: src.networks.ssd.SSD
+feature_extractor:
+  _target_: src.networks.ssd._vgg_extractor
+  backbone_name: vgg16
+anchor_generator:
+  _target_: src.networks.ssd.DefaultBoxGenerator
+  aspect_ratios: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+  steps: [8, 16, 32, 64, 100, 300]
+  scales: [0.07, 0.15, 0.33, 0.51, 0.69, 0.87, 1.05]
+loss:
+  _target_: src.networks.ssd.SSDDefaultLoss
+img_size: [300, 300]
+num_classes: 3

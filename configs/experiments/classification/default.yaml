@@ -1,0 +1,12 @@
+# @package _global_
+
+seed: 12345
+name: default
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss-save-top-5.yaml
+  - /datamodule: classification/base.yaml
+  - /trainer: single-gpu.yaml
+  - /model: classification/resnet18.yaml

@@ -1,0 +1,90 @@
+{
+    "images": [
+        {
+            "id": 0,
+            "file_path": "81.jpg",
+            "s3_url": null,
+            "width": 4160,
+            "height": 3120,
+            "date_captured": "2018:10:09 16:34:13"
+        },
+        {
+            "id": 1,
+            "file_path": "2.jpg",
+            "s3_url": null,
+            "width": 3120,
+            "height": 4160,
+            "date_captured": "2018:10:06 16:28:29"
+        }
+    ],
+    "box_annotations": [
+        {
+            "id": 0,
+            "image_id": 1,
+            "bbox": [
+                1729,
+                2094,
+                125,
+                143
+            ],
+            "bbox_score": 0.22,
+            "category_id": 0
+        },
+        {
+            "id": 1,
+            "image_id": 1,
+            "bbox": [
+                1994,
+                1657,
+                110,
+                191
+            ],
+            "bbox_score": 0.81,
+            "category_id": 0
+        }
+    ],
+    "caption_annotations": [
+        {
+            "id": 0,
+            "image_id": 0,
+            "category_id": 2,
+            "caption": 1,
+            "conf": 0.99
+        },
+        {
+            "id": 1,
+            "image_id": 1,
+            "category_id": 2,
+            "caption": 1
+        }
+    ],
+    "categories": [
+        {
+            "id": 0,
+            "name": "abw",
+            "supercategory": "bounding box"
+        },
+        {
+            "id": 2,
+            "name": "is_trap",
+            "supercategory": "Image Level Categorical Label"
+        }
+    ],
+    "splits": [
+        {
+            "image_id": 0,
+            "split": "val"
+        },
+        {
+            "image_id": 1,
+            "split": "val"
+        }
+    ],
+    "info": {
+        "version": "0.0.0",
+        "description": "test json 1",
+        "contributor": "anmol",
+        "url": "/home/users/anmol/projects/pest-monitoring-new/utils/json/tests/resources/test_json_2.json",
+        "date_created": "2021-10-18"
+    }
+}

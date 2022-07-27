@@ -1,0 +1,2 @@
+_target_: src.loss.ModifiedDetectionLoss
+min_neg_num: 5

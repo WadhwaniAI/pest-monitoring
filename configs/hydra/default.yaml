@@ -1,0 +1,3 @@
+# output path from experiment outputs
+run:
+  dir: /output/${hydra.job.config_name}/${name}/

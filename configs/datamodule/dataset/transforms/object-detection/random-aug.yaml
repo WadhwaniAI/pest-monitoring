@@ -1,0 +1,27 @@
+train:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 300
+    width: 300
+  - _target_: src.data.transforms.RandomBlur
+  - _target_: src.data.transforms.HorizontalFlip
+  - _target_: src.data.transforms.VerticalFlip
+  - _target_: src.data.transforms.ToPercentCoords
+  - _target_: src.data.transforms.ToTensor
+val:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 300
+    width: 300
+  - _target_: src.data.transforms.ToPercentCoords
+  - _target_: src.data.transforms.ToTensor
+test:
+  - _target_: src.data.transforms.XYWHToXYX2Y2
+  - _target_: src.data.transforms.ConvertFromInts
+  - _target_: src.data.transforms.Resize
+    height: 300
+    width: 300
+  - _target_: src.data.transforms.ToPercentCoords
+  - _target_: src.data.transforms.ToTensor

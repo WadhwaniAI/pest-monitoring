@@ -1,0 +1,6 @@
+_target_: src.networks.retina_net.RetinaNet
+resnet_backbone: resnet18
+loss:
+  _target_: src.networks.retina_net.FocalLoss
+num_classes: 3
+pretrained: True

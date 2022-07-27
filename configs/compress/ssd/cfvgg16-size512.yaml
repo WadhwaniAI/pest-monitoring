@@ -1,0 +1,54 @@
+# @package _global_
+
+seed: 12345
+name: default
+
+defaults:
+  - /hydra: default.yaml
+  - /logger: wandb.yaml
+  - /callbacks: val-loss.yaml
+  - /datamodule: object-detection/base-size-512-wo-norm-000.yaml
+  - /trainer: single-gpu.yaml
+  - /model/network: ssd/cfvgg-size512-reducedfc.yaml
+  - /model/optimizer: AdamW/wd-1e-3.yaml
+
+trainer:
+  max_epochs: 200
+
+model:
+  _target_: src.models.CFSSDNet
+
+pruner:
+  _target_: compression.L1FilterPruner
+  dummy_input_shape: [1, 3, 512, 512]
+  max_epochs: 1
+  config_list:
+    - sparsity: 0.8
+      op_types:
+        - 'Conv2d'
+      op_names:
+        - network.backbone.features.0
+        - network.backbone.features.2
+        - network.backbone.features.5
+        - network.backbone.features.7
+        - network.backbone.features.10
+        - network.backbone.features.12
+        - network.backbone.features.14
+        - network.backbone.features.17
+        - network.backbone.features.19
+        - network.backbone.extra.0.1
+        - network.backbone.extra.0.3
+        - network.backbone.extra.0.5
+        - network.backbone.extra.0.7.1
+        - network.backbone.extra.0.7.3
+        - network.backbone.extra.1.0
+        - network.backbone.extra.1.2
+        - network.backbone.extra.2.0
+        - network.backbone.extra.2.2
+        - network.backbone.extra.3.0
+        - network.backbone.extra.3.2
+        - network.backbone.extra.4.0
+        - network.backbone.extra.4.2
+        - network.rejection_head.feature_extractor.0.24
+        - network.rejection_head.feature_extractor.0.26
+        - network.rejection_head.feature_extractor.0.28

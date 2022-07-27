@@ -1,0 +1,38 @@
+_target_: compression.AGPIterativePruner
+dummy_input_shape: [1, 3, 512, 512]
+pruning_algorithm: l1
+total_iteration: 5
+fine_tuning_epochs: 20
+config_list:
+  - sparsity: 0.8
+    op_types:
+      - 'Conv2d'
+    op_names:
+      - network.backbone.features.0
+      - network.backbone.features.2
+      - network.backbone.features.5
+      - network.backbone.features.7
+      - network.backbone.features.10
+      - network.backbone.features.12
+      - network.backbone.features.14
+      - network.backbone.features.17
+      - network.backbone.features.19
+      - network.backbone.features.21
+      - network.backbone.features.23
+      - network.backbone.extra.0.1
+      - network.backbone.extra.0.3
+      - network.backbone.extra.0.5
+      - network.backbone.extra.0.9.1
+      - network.backbone.extra.0.9.3
+      - network.backbone.extra.1.0
+      - network.backbone.extra.1.2
+      - network.backbone.extra.2.0
+      - network.backbone.extra.2.2
+      - network.backbone.extra.3.0
+      - network.backbone.extra.3.2
+      - network.backbone.extra.4.0
+      - network.backbone.extra.4.2
+      - network.rejection_head.feature_extractor.0
+      - network.rejection_head.feature_extractor.1
+      - network.rejection_head.feature_extractor.2
+      - network.rejection_head.feature_extractor.3

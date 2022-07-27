@@ -1,0 +1,4 @@
+_target_: yolort.models.YOLOv5
+arch: yolov5_darknet_pan_s_r60
+num_classes: 2
+pretrained: False
