@@ -54,9 +54,9 @@ the challenges we face.
 ### Further reading
 
 * [Pest Management for Cotton Farming](https://www.wadhwaniai.org/programs/pest-management/)
-* "[Pest management in cotton farms: an AI-system case study from the
-  global South](https://dx.doi.org/10.1145/3394486.3403363)"
-* "[How Wadhwani AI Uses PyTorch To Empower Cotton Farmers](https://medium.com/pytorch/how-wadhwani-ai-uses-pytorch-to-empower-cotton-farmers-14397f4c9f2b)"
+* [Pest management in cotton farms: an AI-system case study from the
+  global South](https://dx.doi.org/10.1145/3394486.3403363)
+* [How Wadhwani AI Uses PyTorch To Empower Cotton Farmers](https://medium.com/pytorch/how-wadhwani-ai-uses-pytorch-to-empower-cotton-farmers-14397f4c9f2b)
 
 ## Usage basics
 
