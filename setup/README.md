@@ -15,7 +15,7 @@ If you have access to Wadhwani AI's docker hub
 ```bash
 cd ~/projects/pest-monitoring-new/setup/
 
-docker pull wadhwaniai/pest-monitoring:v2
+docker pull wadhwaniai/pest-monitoring:latest
 ```
 
 OR if you want to build the docker image from the Dockerfile
